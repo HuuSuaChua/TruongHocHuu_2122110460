@@ -1,0 +1,10 @@
+{
+    "name": "truonghochuu/shop-may-tinh",
+    "description": "Xây dựng website bán hàng - Trương Học Hữu",
+    "autoload": {
+        "psr-4":{
+            "Src\\":"application/"
+        }
+    },
+    "require": {}
+}
