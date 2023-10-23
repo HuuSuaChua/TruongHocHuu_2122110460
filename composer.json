@@ -1,10 +1,23 @@
 {
     "name": "truonghochuu/shop-may-tinh",
     "description": "Xây dựng website bán hàng - Trương Học Hữu",
+    "authors": [
+        {
+            "name": "Trương Học Hữu",
+            "email": "truonghochuuken@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4":{
-            "Src\\":"application/"
-        }
-    },
-    "require": {}
+            "App\\":"app/"
+        },
+        "files": [
+        "./app/Route.php",
+        "./config/database.php"
+    ]
+},
+    "require": {
+        "illuminate/database": "^9.52",
+        "illuminate/events": "^9.52"
+    }
 }
