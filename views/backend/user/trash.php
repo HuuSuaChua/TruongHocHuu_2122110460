@@ -1,6 +1,6 @@
 <?php
-   use App\Models\Product;
-   $list = Product::where('status','=',0)
+   use App\Models\user;
+   $list = user::where('status','=',0)
    ->orderBy('created_at','DESC')
    ->get();
 ?>
@@ -11,7 +11,7 @@
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Thùng rác sản phẩm</h1>
+                     <h1 class="d-inline">Thùng rác thương hiệu</h1>
                   </div>
                </div>
             </div>
@@ -22,11 +22,11 @@
                <div class="card-header text-right">
                   <div class="row">
                      <div class="col-md-6 text-left">
-                        <a class="text-success" href="index.php?option=product">Tất cả</a>
-                        <a class="text-danger" href="index.php?option=product&cat=trash">Thùng rác</a>
+                        <a class="text-success" href="index.php?option=user">Tất cả</a>
+                        <a class="text-danger" href="index.php?option=user&cat=trash">Thùng rác</a>
                      </div>
                      <div class="col-md-6 text-right">
-                     <a href="index.php?option=product" class="btn btn-sm btn-info">
+                     <a href="index.php?option=user" class="btn btn-sm btn-info">
                      <i class="fa fa-arrow-left" aria-hidden="true"></i>
                      Về danh sách
                   </a>
@@ -44,7 +44,7 @@
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên sản phẩm</th>
+                                 <th>Tên thương hiệu</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>
@@ -56,15 +56,15 @@
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/product/<?= $item->image; ?>" alt="<?= $item->name; ?>">
+                                    <img src="../public/images/<?= $item->image; ?>" alt="<?= $item->name; ?>">
                                  </td>
                                  <td>
                                     <div class="name">
                                        <?= $item->name; ?>
                                     </div>
                                     <div class="function_style">
-                                    <a class="text-danger" href="index.php?option=product&cat=restore&id=<?= $item->id;?>"><i class="fas fa-undo"></i> Khôi Phục</a>  
-                                    <a class="text-danger" href="index.php?option=product&cat=destroy&id=<?= $item->id;?>"><i class="fas fa-trash"></i></i> Xoá</a>  
+                                    <a class="text-danger" href="index.php?option=user&cat=restore&id=<?= $item->id;?>"><i class="fas fa-undo"></i> Khôi Phục</a>  
+                                    <a class="text-danger" href="index.php?option=user&cat=destroy&id=<?= $item->id;?>"><i class="fas fa-trash"></i></i> Xoá</a>  
                                     </div>
                                  </td>
                                  <td><?= $item->slug; ?></td>

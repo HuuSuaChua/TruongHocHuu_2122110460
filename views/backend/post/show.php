@@ -1,11 +1,11 @@
 <?php
-use App\Models\user;
+use App\Models\post;
 use App\Libraries\MyClass;
 $id = $_REQUEST['id'];
-$use = user::find($id);
-if($use == null){
+$post = post::find($id);
+if($post == null){
    MyClass::set_flash('message',['msg'=>'Lỗi trang','type'=>'danger']);
-    header('Location:index.php?option=use&cat=use');
+    header('Location:index.php?option=post&cat=post');
 }
 ?>
 <?php require_once "../views/backend/header.php"; ?>
@@ -26,7 +26,7 @@ if($use == null){
                <div class="card-header text-right">
                   <div class="row">
                      <div class="col-md-12 text-right">
-                     <a href="index.php?option=use" class="btn btn-sm btn-info">
+                     <a href="index.php?option=post" class="btn btn-sm btn-info">
                      <i class="fa fa-arrow-left" aria-hidden="true"></i>
                      Về danh sách
                   </a>
@@ -52,67 +52,79 @@ if($use == null){
                                  <td></td>
                                  <td></td>
                                  <td>ID</td>
-                                 <td><?=$use->id; ?></td>
+                                 <td><?=$post->id; ?></td>
                               </tr>  
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Name</td>
-                                 <td><?=$use->name; ?></td>
+                                 <td>Topic_id</td>
+                                 <td><?=$post->topic_id; ?></td>
+                              </tr>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td>Title</td>
+                                 <td><?=$post->title; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Slug</td>
-                                 <td><?=$use->slug; ?></td>
+                                 <td><?=$post->slug; ?></td>
+                              </tr>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td>Detail</td>
+                                 <td><?=$post->detail; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Image</td>
-                                 <td><?=$use->image; ?></td>
+                                 <td><?=$post->image; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Sort_order</td>
-                                 <td><?=$use->sort_order; ?></td>
+                                 <td>Type</td>
+                                 <td><?=$post->type; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Description</td>
-                                 <td><?=$use->description; ?></td>
+                                 <td><?=$post->description; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Created_at</td>
-                                 <td><?=$use->created_at; ?></td>
+                                 <td><?=$post->created_at; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Created_by</td>
-                                 <td><?=$use->created_by; ?></td>
+                                 <td><?=$post->created_by; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Updated_at</td>
-                                 <td><?=$use->updated_at; ?></td>
+                                 <td><?=$post->updated_at; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Updated_by</td>
-                                 <td><?=$use->updated_by; ?></td>
+                                 <td><?=$post->updated_by; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Status</td>
-                                 <td><?=$use->status; ?></td>
+                                 <td><?=$post->status; ?></td>
                               </tr>
                            </tbody>
                         </table>

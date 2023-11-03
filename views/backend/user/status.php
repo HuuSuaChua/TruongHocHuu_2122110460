@@ -13,4 +13,4 @@ $use->updated_at= date('Y-m-d H:i:s');
 $use->updated_by = (isset($_SESSION['user_id']) ? $_SESSION['user_id']:1);
 $use->save();
 MyClass::set_flash('message',['msg'=>'Thay đổi trạng thái thành công','type'=>'success']);
-header("Location:index.php?option=use");
+header("Location:index.php?option=user");

@@ -1,19 +1,23 @@
 <?php 
-
-use App\Models\Product;
+use App\Models\Brand;
 use App\Libraries\Pagination;
-  
-   $current = Pagination::pageCurrent();
-   $limit = 8;
+use App\Models\Product;
 
-   $offset = Pagination::pageOffset($current, $limit);
+$limit = 8;
+$current = Pagination::pageCurrent();
+$offset = Pagination::pageOffset($current, $limit);
 
-   $list_product = Product::where('status','=',1)
+   $slug = $_REQUEST['cat'];
+   $brand = Brand::where([['status','=',1],['slug','=',$slug]])
+   ->select('id','name')
+   ->first();
+
+   $list_product = Product::where([['status','=',1],['brand_id','=',$brand->id]])
    ->orderBy('created_at','DESC') 
    ->skip($offset)
    ->limit($limit)
    ->get();
-   $total = Product::where('status', '=', 1)->count();
+   $total = Product::where([['status','=',1],['brand_id','=',$brand->id]])->count();
 ?>
 <?php require_once'views/frontend/header.php'?>
    <section class="bg-light">
@@ -24,7 +28,7 @@ use App\Libraries\Pagination;
                   <a class="text-main" href="index.php">Trang chủ</a>
                </li>
                <li class="breadcrumb-item active" aria-current="page">
-                  Tất cả sản phẩm
+                  <?= $brand->name;?>
                </li>
             </ol>
          </nav>
@@ -40,7 +44,7 @@ use App\Libraries\Pagination;
             </div>
             <div class="col-md-9 order-1 order-md-2">
                <div class="category-title bg-main">
-                  <h3 class="fs-5 py-3 text-center">Tất cả sản phẩm</h3>  
+                  <h3 class="fs-5 py-3 text-center"><?=$brand->name;?></h3>  
                </div>
                <div class="product-category mt-3">
                   <div class="row product-list">
@@ -51,8 +55,8 @@ use App\Libraries\Pagination;
                 <?php endforeach; ?>
                   </div>
                </div>
-               <?=Pagination::pageLink($total,$current,$limit,'index.php?option=product');?>
-             
+               <?=Pagination::pageLink($total,$current,$limit,'index.php?option=brand&cat='.$slug);?>
+               
             </div>
          </div>
       </div>

@@ -21,7 +21,7 @@
                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-               <a href="index.html" class="nav-link">Home</a>
+               <a href="index.php" class="nav-link">Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                <a href="#" class="nav-link">Contact</a>
@@ -65,7 +65,7 @@
          <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                <div class="image">
-                  <img src="../public/image/user/<?= ($_SESSION['image'])??'image.jpg'; ?> " class="img-circle elevation-2" alt="<?= ($_SESSION['image'])??'image.jpg'; ?> ">
+                  <img src="../public/images/user/<?= ($_SESSION['image'])??'image.jpg'; ?> " class="img-circle elevation-2 img-fluid" alt="<?= ($_SESSION['image'])??'image.jpg'; ?> ">
                </div>
                <div class="info">
                   <a href="#" class="d-block"><?= ($_SESSION['name'])??"name"; ?>  </a>

@@ -83,7 +83,7 @@ use App\Models\Brand;
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/<?= $item->image; ?>" alt="<?= $item->image; ?>">
+                                    <img src="../public/images/brand/<?= $item->image; ?>" alt="<?= $item->image; ?>">
                                  </td>
                                  <td>
                                     <div class="name">

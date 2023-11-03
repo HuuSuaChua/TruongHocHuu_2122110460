@@ -4,14 +4,14 @@
             <div class="col-md-4 pt-4">
                <h3 class="widgettilte">CHÚNG TÔI LÀ AI ?</h3>
                <p class="pt-1">
-                  Copyright@ 2024 DienloiShop là hệ thống bán sĩ và lẽ thời trang nam, nữ, trẻ em và quần áo thể thao,
+                  Copyright@ 2024 Truong Hoc Huu Store là hệ thống bán sĩ và lẽ thời trang nam, nữ, trẻ em và quần áo thể thao,
                   mong muốn đem đến chất lượng tốt nhất cho khách hàng.
                </p>
                <p class="pt-1">
-                  Địa chỉ: B216A, KP Bình Phước, Phường Bình Nhâm, TP. Thuận An, Bình Dương
+                  Địa chỉ: 46a,Đường Số 22,Phước Long B , Quận 9.
                </p>
                <p class="pt-1">
-                  Điện thoại: 0985 608 759(call, zalo) - Email: dienloisoft@gmail.com
+                  Điện thoại: 0559 320 257(call, zalo) - Email: truonghochuuken@gmail.com
                </p>
                <h3 class="widgettilte">MẠNG XÃ HỘI</h3>
                <div class="social my-3">
@@ -51,7 +51,7 @@
    </section>
    <section class="dhl-copyright bg-dark py-3">
       <div class="container text-center text-white">
-         Thiết kế bởi: Hồ Diên Lợi - Phone: 0998765432
+         Thiết kế bởi: Trương Học Hữu - Phone: 0559320257
       </div>
    </section>
 </body>

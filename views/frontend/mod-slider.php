@@ -12,7 +12,7 @@
             <?php foreach($mod_slider as $slider ):?> 
                <?php if($index ==0): ?>
              <div class="carousel-item active">
-               <img src="public/images/banner/<?=$slider->image;?>" class="d-block w-100" alt="<?=$slider->image;?>">
+               <img src="public/images/banner/<?=$slider->image;?>" class="d-block w-100 img-fluid" alt="<?=$slider->image;?>">
                </div>
             <?php $index++;?>
                   <?php else : ?> 

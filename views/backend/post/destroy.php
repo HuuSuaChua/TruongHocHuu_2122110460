@@ -1,12 +1,12 @@
 <?php
-use App\Models\user;
+use App\Models\post;
 use App\Libraries\MyClass;
 $id = $_REQUEST['id'];
-$use = user::find($id);
-if($use == null){
+$post = post::find($id);
+if($post == null){
     MyClass::set_flash('message',['msg'=>'Lỗi trang','type'=>'danger']);
-    header('Location:index.php?option=use&cat=trash');
+    header('Location:index.php?option=post&cat=trash');
 }
-$use->delete();
+$post->delete();
 MyClass::set_flash('message',['msg'=>'Xóa khỏi Database thành công','type'=>'success']);
-header("Location:index.php?option=use&cat=trash");
+header("Location:index.php?option=post&cat=trash");

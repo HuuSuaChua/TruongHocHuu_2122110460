@@ -20,7 +20,7 @@
                </a>
             </div>
             <div class="col-12 col-sm-9 d-none d-md-block col-md-5 py-3">
-               <div class="input-group mb-3">
+               <div class="input-group mb-3"></div>
                   <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm"
                      aria-label="Recipient's username" aria-describedby="basic-addon2">
                   <span class="input-group-text bg-main" id="basic-addon2">
@@ -69,7 +69,7 @@
             <div class="col-12 col-md-12">
                <nav class="navbar navbar-expand-lg bg-main">
                   <div class="container-fluid">
-                     <a class="navbar-brand d-block d-sm-none text-white" href="index.html">DIENLOISHOP</a>
+                     <a class="navbar-brand d-block d-sm-none text-white" href="index.html">Truong Hoc Huu Store</a>
                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">

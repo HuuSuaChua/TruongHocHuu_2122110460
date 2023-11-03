@@ -1,3 +1,13 @@
+<?php
+   use App\Models\Brand;
+   use App\Models\Category;
+   $brand = Brand::select('id', 'name')
+   ->orderBy('created_at','DESC')
+   ->get();
+   $category = Category::select('id', 'name')
+   ->orderBy('created_at','DESC')
+   ->get();
+?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
    <form action="index.php?option=product&cat=process" method="post" enctype="multipart/form-date">
@@ -40,7 +50,9 @@
                                     <label>Danh mục (*)</label>
                                     <select name="category_id" class="form-control">
                                        <option value="">Chọn danh mục</option>
-                                       <option value="1">Tên danh mục</option>
+                                       <?php foreach ($category as $ct): ?>
+                                       <option value="<?=$ct->id?>"><?=$ct->name?></option>
+                                       <?php endforeach;?>
                                     </select>
                                  </div>
                               </div>
@@ -49,7 +61,9 @@
                                     <label>Thương hiệu (*)</label>
                                     <select name="brand_id" class="form-control">
                                        <option value="">Chọn thương hiệu</option>
-                                       <option value="1">Tên thương hiệu</option>
+                                          <?php foreach ($brand as $br): ?>
+                                          <option value="<?=$br->id?>"><?=$br->name?></option>
+                                          <?php endforeach;?>
                                     </select>
                                  </div>
                               </div>

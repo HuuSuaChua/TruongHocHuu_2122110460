@@ -14,7 +14,7 @@
          <section class="content">
             <div class="card">
                <div class="card-header text-right">
-                  <a href="index.php?option=use" class="btn btn-sm btn-info">
+                  <a href="index.php?option=user" class="btn btn-sm btn-info">
                      <i class="fa fa-arrow-left" aria-hidden="true"></i>
                      Về danh sách
                   </a>

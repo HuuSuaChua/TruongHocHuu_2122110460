@@ -1,11 +1,11 @@
 <?php
-use App\Models\Product;
+use App\Models\user;
 use App\Libraries\MyClass;
 $id = $_REQUEST['id'];
-$product = Product::find($id);
-if($product == null){
+$use = user::find($id);
+if($use == null){
    MyClass::set_flash('message',['msg'=>'Lỗi trang','type'=>'danger']);
-    header('Location:index.php?option=brand&cat=brand');
+    header('Location:index.php?option=user&cat=user');
 }
 ?>
 <?php require_once "../views/backend/header.php"; ?>
@@ -26,7 +26,7 @@ if($product == null){
                <div class="card-header text-right">
                   <div class="row">
                      <div class="col-md-12 text-right">
-                     <a href="index.php?option=product" class="btn btn-sm btn-info">
+                     <a href="index.php?option=user" class="btn btn-sm btn-info">
                      <i class="fa fa-arrow-left" aria-hidden="true"></i>
                      Về danh sách
                   </a>
@@ -52,97 +52,67 @@ if($product == null){
                                  <td></td>
                                  <td></td>
                                  <td>ID</td>
-                                 <td><?=$product->id; ?></td>
+                                 <td><?=$use->id; ?></td>
                               </tr>  
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Category_id</td>
-                                 <td><?=$product->category_id; ?></td>
-                              </tr>  
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Brand_id</td>
-                                 <td><?=$product->brand_id; ?></td>
-                              </tr> 
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Name</td>
-                                 <td><?=$product->name; ?></td>
+                                 <td><?=$use->name; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Slug</td>
-                                 <td><?=$product->slug; ?></td>
+                                 <td><?=$use->slug; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Image</td>
-                                 <td><?=$product->image; ?></td>
+                                 <td><?=$use->image; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Detail</td>
-                                 <td><?=$product->detail; ?></td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Qty</td>
-                                 <td><?=$product->qty; ?></td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Price</td>
-                                 <td><?=$product->price; ?></td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Price sale</td>
-                                 <td><?=$product->pricesale; ?></td>
+                                 <td>Sort_order</td>
+                                 <td><?=$use->sort_order; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Description</td>
-                                 <td><?=$product->description; ?></td>
+                                 <td><?=$use->description; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Created_at</td>
-                                 <td><?=$product->created_at; ?></td>
+                                 <td><?=$use->created_at; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Created_by</td>
-                                 <td><?=$product->created_by; ?></td>
+                                 <td><?=$use->created_by; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Updated_at</td>
-                                 <td><?=$product->updated_at; ?></td>
+                                 <td><?=$use->updated_at; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Updated_by</td>
-                                 <td><?=$product->updated_by; ?></td>
+                                 <td><?=$use->updated_by; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Status</td>
-                                 <td><?=$product->status; ?></td>
+                                 <td><?=$use->status; ?></td>
                               </tr>
                            </tbody>
                         </table>

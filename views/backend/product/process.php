@@ -7,13 +7,16 @@ if(isset($_POST['THEM'])){
     //----------------------------------------------------------------
     $product->name = $_POST['name'];
     $product->slug = (strlen($_POST['slug'])>0)?$_POST['slug']:MyClass::str_slug($_POST['name']);  
+    $product->category_id = $_POST['category_id'];
+    $product->brand_id = $_POST['brand_id'];
     $product->price = $_POST['price'];
+    $product->image = $_POST['image'];
     $product->status = $_POST['status'];
     //Xu ly upload-----------------------------------------
     if (strlen($_FILES[ 'image']['name']) > 0) 
     {
         $target_dir = "../public/images/product/";
-        $target_file = $target_dir. basename($_FILES["image"]["name"]);
+        $target_file = $target_dir.basename($_FILES["image"]["name"]);
         $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));//duoi
         if (in_array($extension, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) 
         {

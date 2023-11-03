@@ -28,6 +28,7 @@
                   Noi dung
                </div>
                <div class="card-body p-2">
+               <?php require_once "../views/backend/message.php"; ?>
                   <div class="row">
                      <div class="col-md-3">
                         <div class="accordion" id="accordionExample">

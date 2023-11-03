@@ -45,7 +45,7 @@
                                  Tieu đề bài viết mói nhất 3
                               </a>
                            </h3>
-                           <p>Tieu đề bài viết mói nhất 1Tieu đề bài viết mói nhất 1Tieu đề bài viết mói nhất 1</p>
+                           <p>Tiêu đề bài viết mói nhất 1Tieu đề bài viết mói nhất 1Tieu đề bài viết mói nhất 1</p>
                         </div>
                      </div>
                      <div class="row mb-3">

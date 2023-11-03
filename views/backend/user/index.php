@@ -12,7 +12,7 @@
                <div class="row mb-2">
                   <div class="col-sm-12">
                      <h1 class="d-inline">Tất cả thành viên</h1>
-                     <a href="index.php?option=use&cat=create" class="btn btn-sm btn-primary">Thêm thành viên</a>
+                     <a href="index.php?option=user&cat=create" class="btn btn-sm btn-primary">Thêm thành viên</a>
                   </div>
                </div>
             </div>
@@ -44,7 +44,7 @@
                               <input type="checkbox">
                            </td>
                            <td>
-                              <img src="../public/images/<?= $item->image; ?>" alt="user.jpg">
+                              <img class="img-fluid" src="../public/images/user/<?= $item->image; ?>" alt="user.jpg">
                            </td>
                            <td>
                               <div class="name">
@@ -52,23 +52,23 @@
                               </div>
                               <div class="function_style">
                                     <?php if($item->status == 1): ?>
-                                       <a class="text-success btn-xs" href="index.php?option=use&cat=status&id=<?= $item->id;?>">
+                                       <a class="text-success btn-xs" href="index.php?option=user&cat=status&id=<?= $item->id;?>">
                                        <i class="fas fa-toggle-on"></i>
                                        Hiện
                                        </a> |
                                        <?php else: ?>
-                                          <a class="text-danger btn-xs" href="index.php?option=use&cat=status&id=<?= $item->id;?>">
+                                          <a class="text-danger btn-xs" href="index.php?option=user&cat=status&id=<?= $item->id;?>">
                                        <i class="fas fa-toggle-on"></i>
                                        Ẩn
                                        </a> |
                                        <?php endif; ?>
-                                       <a class="text-warning btn-xs" href="index.php?option=use&cat=edit&id=<?= $item->id;?>">
+                                       <a class="text-warning btn-xs" href="index.php?option=user&cat=edit&id=<?= $item->id;?>">
                                        <i class="fas fa-edit"></i>
                                        Chỉnh sửa</a> |
-                                       <a class="text-warning btn-xs" href="index.php?option=use&cat=show&id=<?= $item->id;?>">
+                                       <a class="text-warning btn-xs" href="index.php?option=user&cat=show&id=<?= $item->id;?>">
                                        <i class="fas fa-eye"></i>
                                        Chi tiết</a> |
-                                       <a class="text-danger btn-xs" href="index.php?option=use&cat=delete&id=<?= $item->id;?>">
+                                       <a class="text-danger btn-xs" href="index.php?option=user&cat=delete&id=<?= $item->id;?>">
                                        <i class="fas fa-trash"></i>
                                        Xoá</a>
                                        

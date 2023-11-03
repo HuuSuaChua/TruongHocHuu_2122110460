@@ -1,7 +1,12 @@
 <?php
    use App\Models\Product;
-   $list = Product::where('status','!=',0)
-   ->orderBy('created_at','DESC')
+   use App\Models\Category; 
+   use App\Models\Brand;
+   $list = Product::where('product.status', '!=', '0')
+   ->join('category', 'category.id', '=', 'product.category_id')
+   ->join('brand', 'brand.id', '=', 'product.brand_id')
+   ->orderBy('product.created_at', 'desc')
+   ->select('product.name as nameproduct', 'product.image', 'product.status', 'product.id', 'category.name as catename', 'brand.name as brandname')
    ->get();
 ?>
 <?php require_once "../views/backend/header.php"; ?>
@@ -13,9 +18,11 @@
                   <div class="row mb-2">
                      <div class="col-sm-12">
                         <h1 class="d-inline">Tất cả sản phẩm</h1>
+                     </div>
+                     <div class="col-sm-12 mt-2 mb-2">
                         <a href="index.php?option=product&cat=create" class="btn btn-sm btn-primary">Thêm sản phẩm</a>
                      </div>
-                     <div class=" text-left">
+                     <div class="col-md-6 text-left">
                         <a class="text-success" href="index.php?option=product">Tất cả</a>
                         <a class="text-danger" href="index.php?option=product&cat=trash">Thùng rác</a>
                      </div>
@@ -52,11 +59,11 @@
                                  <input type="checkbox">
                               </td>
                               <td>
-                                 <img src="../public/images/<?= $item->image; ?>" alt="<?= $item->image; ?>">
+                                 <img class="img-fluid" src="../public/images/product/<?= $item->image; ?>" alt="<?= $item->image; ?>">
                               </td>
                               <td>
                                  <div class="name">
-                                 <?= $item->name; ?>
+                                 <?= $item->nameproduct; ?>
                                  </div>
                                  <div class="function_style">
                                     <?php if($item->status == 1): ?>
@@ -79,8 +86,8 @@
                                     Xoá</a>
                                  </div>
                               </td>
-                              <td> <?= $item->name; ?></td>
-                              <td><?= $item->name; ?></td>
+                              <td> <?= $item->catename; ?></td>
+                              <td><?= $item->brandname; ?></td>
                            </tr>
                            <?php endforeach; ?>
                               <?php endif; ?>

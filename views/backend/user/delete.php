@@ -5,11 +5,11 @@ $id = $_REQUEST['id'];
 $use = user::find($id);
 if($use == null){
     MyClass::set_flash('message',['msg'=>'Lỗi trang','type'=>'danger']);
-    header('Location:index.php?option=use');
+    header('Location:index.php?option=user');
 }
 $use->status = 0;
 $use->updated_at = date('Y-m-d H:i:s');
 $use->updated_by = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] :   1;
 $use->save();
 MyClass::set_flash('message',['msg'=>'Xóa thành công','type'=>'success']);
-header("Location:index.php?option=use");
+header("Location:index.php?option=user");

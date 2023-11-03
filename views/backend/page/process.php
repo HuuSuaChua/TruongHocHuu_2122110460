@@ -1,66 +1,65 @@
 <?php
 
-use App\Models\user;
+use App\Models\Post;
 use App\Libraries\MyClass;
 if(isset($_POST['THEM'])){
-    $use=new user();
+    $page=new Post();
     //----------------------------------------------------------------
-    $use->name = $_POST['name'];  
-    $use->phone = $_POST['phone'];
-    $use->email = $_POST['email'];
-    $use->username = $_POST['username'];
-    $use->password = sha1($_POST['password']);
-    $use->status = $_POST['status'];
+    $page->title = $_POST['title'];
+    $page->slug = (strlen($_POST['slug'])>0)?$_POST['slug']:MyClass::str_slug($_POST['title']);  
+    $page->detail = $_POST['detail'];
+    $page->image = $_POST['image'];
+    $page->status = $_POST['status'];
     //Xu ly upload-----------------------------------------
     if (strlen($_FILES[ 'image']['name']) > 0) 
     {
-        $target_dir = "../public/images/use/";
+        $target_dir = "../public/images/page/";
         $target_file = $target_dir. basename($_FILES["image"]["name"]);
         $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));//duoi
         if (in_array($extension, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) 
         {
-        $filename = $use->slug .'.'. $extension;
+        $filename = $page->slug .'.'. $extension;
         move_uploaded_file($_FILES['image']['tmp_name'], $target_dir. $filename);
-        $use->image = $filename;
+        $page->image = $filename;
         }
     } 
     //----------------------------------------------------------------
-    $use->created_at = date('Y-m-d H:i:s');
-    $use->created_by = (isset($_SESSION['user_id']) ? $_SESSION['user_id']:1);
-    var_dump($use);
+    $page->created_at = date('Y-m-d H:i:s');
+    $page->created_by = (isset($_SESSION['user_id']) ? $_SESSION['user_id']:1);
+    var_dump($page);
 
-    $use->save();
+    $page->save();
     //----------------------------------------------------------------
     MyClass::set_flash('message',['msg'=>'Thêm thành công','type'=>'success']);
-    header("Location:index.php?option=use");
+    header("Location:index.php?option=page");
 }
 if(isset($_POST['CAPNHAT'])){
     $id = $_POST['id'];
-    $use= user::find($id);
-    if($use == null){
+    $page= Post::find($id);
+    if($page == null){
         MyClass::set_flash('message',['msg'=>'Lỗi trang','type'=>'danger']);
-        header('Location:index.php?option=use');
+        header('Location:index.php?option=page');
     }
-    $use->name = $_POST['name'];
-    $use->slug = (strlen($_POST['slug'])>0)?$_POST['slug']:"ERORR";  
-    $use->description = $_POST['description'];
-    $use->status = $_POST['status'];
+    $page->name = $_POST['name'];
+    $page->slug = (strlen($_POST['slug'])>0)?$_POST['slug']:"ERORR";  
+    $page->description = $_POST['description'];
+    $page->status = $_POST['status'];
     if (strlen($_FILES[ 'image']['name']) > 0) 
     {
-        $target_dir = "../public/images/use/";
+        $target_dir = "../public/images/page/";
         $target_file = $target_dir. basename($_FILES["image"]["name"]);
         $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         if (in_array($extension, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
-        $filename = $use->slug .'.'. $extension;
+        $filename = $page->slug .'.'. $extension;
         move_uploaded_file($_FILES['image']['tmp_name'], $target_dir. $filename);
-        $use->image = $filename;
+        $page->image = $filename;
         }
     }   
-    $use->image = $_FILES['image']['name'];
-    $use->updated_at = date('Y-m-d H:i:s');
-    $use->updated_by = (isset($_SESSION['user_id']) ? $_SESSION['user_id']:1);
-    var_dump($use);
-    $use->save();
+    $page->image = $_FILES['image']['name'];
+    $page->updated_at = date('Y-m-d H:i:s');
+    $page->updated_by = (isset($_SESSION['user_id']) ? $_SESSION['user_id']:1);
+    var_dump($page);
+    $page->save();
     MyClass::set_flash('message',['msg'=>'Cập nhật thành công','type'=>'success']);
-    header("Location:index.php?option=use");
+    header("Location:index.php?option=page");
 }
