@@ -9,7 +9,7 @@
                         <img class="img-fluid" src="public/images/post/post-4.webp" />
                      </a>
                      <h3 class="post-title fs-4 py-2">
-                        <a href="post_detail.html">
+                        <a href="post-detail.php">
                            Tieu đề bài viết mói nhất 1
                         </a>
                      </h3>

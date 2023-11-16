@@ -11,13 +11,13 @@ if($contact==null){
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=contact&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=contact&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Cập nhật thương hiệu</h1>
+                     <h1 class="d-inline">Cập nhật liên hệ</h1>
                   </div>
                </div>
             </div>
@@ -27,11 +27,7 @@ if($contact==null){
             <div class="card">
                <div class="card-header text-right">
                   <div class="row">
-                     <div class="col-md-6 text-left">
-                        <a href="index.php?option=contact">Tất cả</a>
-                        <a href="index.php?option=contact&cat=trash">Thùng rác</a>
-                     </div>
-                     <div class="col-md-6 text-right">
+                     <div class="col-md-12 text-right">
                      <button class="btn btn-sm btn-success" type="submit" name="CAPNHAT">
                      <i class="fa fa-save" aria-hidden="true"></i>
                      Lưu
@@ -44,26 +40,29 @@ if($contact==null){
                   </div>
                </div>
                <div class="card-body">
-               <?php require_once "../views/backend/message.php"; ?>
                   <div class="row">
                      <div class="col-md-12">
                         <div class="mb-3">
                            <input type="hidden" name="id" value="<?= $contact->id;?>"/>
-                           <label>Tên thương hiệu (*)</label>
+                           <label>Tên liên hệ (*)</label>
                            <input type="text" value="<?=$contact->name; ?> " name="name" class="form-control">
                         </div>
                         <div class="mb-3">
-                           <label>Slug</label>
-                           <input type="text" value="<?=$contact->slug; ?> " name="slug" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                           <label>Mô tả</label>
-                           <textarea  name="description" class="form-control"><?=$contact->description; ?></textarea>
-                        </div>
-                        <div class="mb-3">
-                           <label>Hình đại diện</label>
-                           <input type="file" name="image" class="form-control">
-                        </div>
+                              <label>Email</label>
+                              <input type="text" placeholder="Nhập email" name="email" class="form-control">
+                           </div>
+                           <div class="mb-3">
+                              <label>Phone</label>
+                              <input type="text" placeholder="Nhập phone" name="phone" class="form-control">
+                           </div>
+                           <div class="mb-3">
+                              <label>Title</label>
+                              <input type="text" placeholder="Nhập title" name="title" class="form-control">
+                           </div>
+                           <div class="mb-3">
+                              <label>Content</label>
+                              <input type="text" placeholder="Nhập content" name="content" class="form-control">
+                           </div>
                         <div class="mb-3">
                            <label>Trạng thái</label>
                            <select name="status" class="form-control">

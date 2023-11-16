@@ -15,7 +15,7 @@ if($order == null){
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Chi tiết thương hiệu</h1>
+                     <h1 class="d-inline">Chi tiết đơn hàng</h1>
                   </div>
                </div>
             </div>
@@ -57,26 +57,32 @@ if($order == null){
                               <tr>
                                  <td></td>
                                  <td></td>
+                                 <td>ID</td>
+                                 <td><?=$order->user_id; ?></td>
+                              </tr> 
+                              <tr>
+                                 <td></td>
+                                 <td></td>
                                  <td>Name</td>
-                                 <td><?=$order->name; ?></td>
+                                 <td><?=$order->deliveryname; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Slug</td>
-                                 <td><?=$order->slug; ?></td>
+                                 <td>Address</td>
+                                 <td><?=$order->deliveryaddress; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Image</td>
-                                 <td><?=$order->image; ?></td>
+                                 <td>Phone</td>
+                                 <td><?=$order->deliveryphone; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Sort_order</td>
-                                 <td><?=$order->sort_order; ?></td>
+                                 <td>Email</td>
+                                 <td><?=$order->deliveryemail; ?></td>
                               </tr>
                               <tr>
                                  <td></td>

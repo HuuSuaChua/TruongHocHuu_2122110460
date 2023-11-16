@@ -11,7 +11,7 @@
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Thùng rác thương hiệu</h1>
+                     <h1 class="d-inline">Thùng rác Category</h1>
                   </div>
                </div>
             </div>
@@ -44,7 +44,7 @@
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
+                                 <th>Tên Category</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>

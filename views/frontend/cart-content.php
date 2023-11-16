@@ -18,6 +18,7 @@ require_once "views/frontend/header.php"; ?>
 </section>
 <section class="hdl-maincontent py-2">
 <div class="container">
+   <form action="index.php?option=cart&updatecart=true" method="post">
    <table class="table table-bordered">
       <thead>
          <tr class="bg-dark">
@@ -43,19 +44,17 @@ require_once "views/frontend/header.php"; ?>
             <td class="align-middle"><?=$cart['name'];?></td>
             <td class="text-center align-middle"><?=number_format($cart['price']);?></td>
             <td class="text-center align-middle">
-               <div class="input-group mb-3">
-                  <span class="input-group-text" id="sub" onclick="changenumber(id)">-</span>
-                  <input type="text" value="<?=$cart['qty'];?>" id="qty" class="form-control text-center">
-                  <span class="input-group-text" id="add" onclick="changenumber(id)">+</span>
+               <div class="input-group mb-3">                 
+                  <input type="number" value="<?=$cart['qty'];?>" min="0" id="qty" name="qty[<?=$cart['id'];?>]" style="width:60px;">                 
                </div>
             </td>
             <td class="text-center align-middle">
               <?=number_format($money_item); ?>
             </td>
             <td class="text-center align-middle">
-               <button class="btn btn-sm btn-main">
+               <a href ="index.php?option=cart&detelecart=<?=$cart['id'];?>" class="btn btn-sm btn-main">
                   <i class="fa-solid fa-xmark"></i>
-               </button>
+                </a>
             </td>
          </tr>
          <?php $stt++; ?>
@@ -69,8 +68,8 @@ require_once "views/frontend/header.php"; ?>
       <tfoot>
          <tr>
             <td colspan="5">
-               <button class="btn btn-main">Cập nhật</button>
-               <a href="checkout.html" class="btn btn-main">Thanh toán</a>
+               <button class="btn btn-main" type="submit">Cập nhật</button>
+               <a href="index.php?option=checkout" class="btn btn-main">Thanh toán</a>
             </td>
             <td colspan="2" class="text-end">
                <strong>Tổng tiền: <?=number_format(Cart::cartTotal());?></strong>
@@ -78,6 +77,7 @@ require_once "views/frontend/header.php"; ?>
          </tr>
       </tfoot>
    </table>
+   </form>
 </div>
 <script>
    function changenumber(id) {

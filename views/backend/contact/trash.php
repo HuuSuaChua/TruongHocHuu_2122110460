@@ -11,7 +11,7 @@
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Thùng rác thương hiệu</h1>
+                     <h1 class="d-inline">Thùng rác liên hệ</h1>
                   </div>
                </div>
             </div>
@@ -43,9 +43,11 @@
                                  <th class="text-center" style="width:30px;">
                                     <input type="checkbox">
                                  </th>
-                                 <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
-                                 <th>Tên slug</th>
+                                 
+                                 <th>Tên liên hệ</th>
+                                 <th>Điện thoại</th>
+                                 <th>Email</th>
+                                 <th>Tiêu đề</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -55,9 +57,7 @@
                                  <td>
                                     <input type="checkbox">
                                  </td>
-                                 <td>
-                                    <img src="../public/images/<?= $item->image; ?>" alt="<?= $item->name; ?>">
-                                 </td>
+                                
                                  <td>
                                     <div class="name">
                                        <?= $item->name; ?>
@@ -67,7 +67,9 @@
                                     <a class="text-danger" href="index.php?option=contact&cat=destroy&id=<?= $item->id;?>"><i class="fas fa-trash"></i></i> Xoá</a>  
                                     </div>
                                  </td>
-                                 <td><?= $item->slug; ?></td>
+                                 <td><?= $item->phone; ?></td>
+                                 <td><?= $item->email; ?></td>
+                                 <td><?= $item->title; ?></td>
                               </tr>
                               <?php endforeach; ?>
                               <?php endif; ?>

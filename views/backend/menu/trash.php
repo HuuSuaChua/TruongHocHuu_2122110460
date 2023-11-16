@@ -11,7 +11,7 @@
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Thùng rác thương hiệu</h1>
+                     <h1 class="d-inline">Thùng rác menu</h1>
                   </div>
                </div>
             </div>
@@ -44,7 +44,7 @@
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
+                                 <th>Tên menu</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>
@@ -56,9 +56,6 @@
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/<?= $item->image; ?>" alt="<?= $item->name; ?>">
-                                 </td>
-                                 <td>
                                     <div class="name">
                                        <?= $item->name; ?>
                                     </div>
@@ -67,7 +64,8 @@
                                     <a class="text-danger" href="index.php?option=menu&cat=destroy&id=<?= $item->id;?>"><i class="fas fa-trash"></i></i> Xoá</a>  
                                     </div>
                                  </td>
-                                 <td><?= $item->slug; ?></td>
+                                 <td><?= $item->link; ?></td>
+                                 <td><?= $item->type; ?></td>
                               </tr>
                               <?php endforeach; ?>
                               <?php endif; ?>

@@ -15,7 +15,7 @@ if($menu == null){
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Chi tiết thương hiệu</h1>
+                     <h1 class="d-inline">Chi tiết Menu</h1>
                   </div>
                </div>
             </div>
@@ -63,26 +63,50 @@ if($menu == null){
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Slug</td>
-                                 <td><?=$menu->slug; ?></td>
+                                 <td>Link</td>
+                                 <td><?=$menu->link; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Image</td>
-                                 <td><?=$menu->image; ?></td>
+                                 <td>Type</td>
+                                 <td><?=$menu->type; ?></td>
+                              </tr>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td>Table_id</td>
+                                 <td><?=$menu->table_id; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Sort_order</td>
                                  <td><?=$menu->sort_order; ?></td>
-                              </tr>
+                              </tr>  
                               <tr>
                                  <td></td>
                                  <td></td>
                                  <td>Description</td>
                                  <td><?=$menu->description; ?></td>
+                              </tr>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td>Position</td>
+                                 <td><?=$menu->position; ?></td>
+                              </tr>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td>Level</td>
+                                 <td><?=$menu->level; ?></td>
+                              </tr>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td>Parent_id</td>
+                                 <td><?=$menu->parent_id; ?></td>
                               </tr>
                               <tr>
                                  <td></td>

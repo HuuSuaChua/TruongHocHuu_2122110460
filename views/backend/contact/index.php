@@ -7,22 +7,30 @@
 <?php require_once "../views/backend/header.php"; ?>  
       <!-- CONTENT -->
       <div class="content-wrapper">
-         <section class="content-header">
-            <div class="container-fluid">
-               <div class="row mb-2">
-                  <div class="col-sm-12">
-                     <h1 class="d-inline">Tất cả liên hệ</h1>
+      <section class="content-header">
+               <div class="container-fluid">
+                  <div class="row mb-2">
+                     <div class="col-sm-12">
+                        <h1 class="d-inline">Tất cả liên hệ</h1>
+                     </div>
+                     <div class="col-sm-12 mt-2 mb-2">
+                        <a href="index.php?option=contact&cat=create" class="btn btn-sm btn-primary">Thêm liên hệ</a>
+                     </div>
+                     <div class="col-md-6 text-left">
+                        <a class="text-success" href="index.php?option=contact">Tất cả</a>
+                        <a class="text-danger" href="index.php?option=contact&cat=trash">Thùng rác</a>
+                     </div>
                   </div>
                </div>
-            </div>
-         </section>
+            </section>
          <!-- Main content -->
          <section class="content">
             <div class="card">
                <div class="card-header text-right">
-                  Noi dung
+                 Nội dung
                </div>
                <div class="card-body">
+               <?php require_once "../views/backend/message.php"; ?>
                   <table class="table table-bordered" id="mytable">
                      <thead>
                         <tr>

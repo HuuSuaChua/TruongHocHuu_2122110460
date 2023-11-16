@@ -1,8 +1,9 @@
 <?php
    use App\Models\Post;
-   $list = Post::where('status','!=',0)
-   ->orderBy('created_at','DESC')
-   ->get();
+   $list = Post::where('post.status', '!=', '0')
+   ->join('topic','topic.id','=','post.topic_id')
+   ->select('post.id','post.status','post.title as postname','post.image','topic.name as topicname')
+   ->orderBy('post.created_at', 'desc')->get();
 ?>
 <?php require_once "../views/backend/header.php"; ?>  
       <!-- CONTENT -->
@@ -50,11 +51,11 @@
                               <input type="checkbox">
                            </td>
                            <td>
-                              <img src="../public/images/post/<?= $item->image; ?>" alt="<?= $item->image; ?>">
+                              <img class="img-fluid" src="../public/images/post/<?= $item->image; ?>" alt="<?= $item->image; ?>">
                            </td>
                            <td>
-                              <div class="name">
-                              <?= $item->title; ?>
+                              <div class="title">
+                              <?= $item->postname; ?>
                               </div>
                               <div class="function_style">
                                     <?php if($item->status == 1): ?>
@@ -80,7 +81,7 @@
                                        
                                     </div>
                            </td>
-                           <td><?= $item->type; ?></td>
+                           <td><?= $item->topicname; ?></td>
                         </tr>
                         <?php endforeach; ?>
                         <?php endif; ?>

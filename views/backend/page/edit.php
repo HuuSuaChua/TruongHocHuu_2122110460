@@ -17,7 +17,7 @@ if($page==null){
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Cập nhật thương hiệu</h1>
+                     <h1 class="d-inline">Cập nhật trang đơn</h1>
                   </div>
                </div>
             </div>
@@ -49,15 +49,15 @@ if($page==null){
                      <div class="col-md-12">
                         <div class="mb-3">
                            <input type="hidden" name="id" value="<?= $page->id;?>"/>
-                           <label>Tên thương hiệu (*)</label>
-                           <input type="text" value="<?=$page->name; ?> " name="name" class="form-control">
+                           <label>Tên trang đơn (*)</label>
+                           <input type="text" value="<?=$page->title; ?> " name="name" class="form-control">
                         </div>
                         <div class="mb-3">
                            <label>Slug</label>
                            <input type="text" value="<?=$page->slug; ?> " name="slug" class="form-control">
                         </div>
                         <div class="mb-3">
-                           <label>Mô tả</label>
+                           <label>Chi tiết (*)</label>
                            <textarea  name="description" class="form-control"><?=$page->description; ?></textarea>
                         </div>
                         <div class="mb-3">

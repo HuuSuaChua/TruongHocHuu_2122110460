@@ -11,13 +11,13 @@ if($order==null){
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=order&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=order&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Cập nhật thương hiệu</h1>
+                     <h1 class="d-inline">Cập nhật đơn hàng</h1>
                   </div>
                </div>
             </div>
@@ -49,20 +49,20 @@ if($order==null){
                      <div class="col-md-12">
                         <div class="mb-3">
                            <input type="hidden" name="id" value="<?= $order->id;?>"/>
-                           <label>Tên thương hiệu (*)</label>
-                           <input type="text" value="<?=$order->name; ?> " name="name" class="form-control">
+                           <label>Tên đơn hàng (*)</label>
+                           <input type="text" value="<?=$order->deliveryname;?> " name="name" class="form-control">
                         </div>
                         <div class="mb-3">
-                           <label>Slug</label>
-                           <input type="text" value="<?=$order->slug; ?> " name="slug" class="form-control">
+                           <label>Address</label>
+                           <input type="text" value="<?=$order->deliveryaddress;?> " name="deliveryaddress" class="form-control">
                         </div>
                         <div class="mb-3">
-                           <label>Mô tả</label>
-                           <textarea  name="description" class="form-control"><?=$order->description; ?></textarea>
+                           <label>Phone</label>
+                           <textarea  name="deliveryphone" class="form-control"><?=$order->deliveryphone; ?></textarea>
                         </div>
                         <div class="mb-3">
-                           <label>Hình đại diện</label>
-                           <input type="file" name="image" class="form-control">
+                           <label>Email</label>
+                           <textarea  name="deliveryemail" class="form-control"><?=$order->deliveryemail; ?></textarea>
                         </div>
                         <div class="mb-3">
                            <label>Trạng thái</label>

@@ -50,7 +50,7 @@ $offset = Pagination::pageOffset($current, $limit);
                   <a class="text-main" href="index.html">Trang chủ</a>
                </li>
                <li class="breadcrumb-item active" aria-current="page">
-                 <?= $cat->name;?>
+                 <?= $cat->name ?? "Không có sản phẩm";?>
                </li>
             </ol>
          </nav>
@@ -66,7 +66,7 @@ $offset = Pagination::pageOffset($current, $limit);
             </div>
             <div class="col-md-9 order-1 order-md-2">
                <div class="category-title bg-main">
-                  <h3 class="fs-5 py-3 text-center"><?=$cat->name;?></h3>  
+                  <h3 class="fs-5 py-3 text-center"><?=$cat->name ?? "Không có sản phẩm";?></h3>  
                </div>
                <div class="product-category mt-3">
                   <div class="row product-list">

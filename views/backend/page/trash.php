@@ -11,7 +11,7 @@
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Thùng rác thương hiệu</h1>
+                     <h1 class="d-inline">Thùng rác trang đơn</h1>
                   </div>
                </div>
             </div>
@@ -21,15 +21,11 @@
             <div class="card">
                <div class="card-header text-right">
                   <div class="row">
-                     <div class="col-md-6 text-left">
-                        <a class="text-success" href="index.php?option=page">Tất cả</a>
-                        <a class="text-danger" href="index.php?option=page&cat=trash">Thùng rác</a>
-                     </div>
-                     <div class="col-md-6 text-right">
+                     <div class="col-md-12 text-right">
                      <a href="index.php?option=page" class="btn btn-sm btn-info">
                      <i class="fa fa-arrow-left" aria-hidden="true"></i>
                      Về danh sách
-                  </a>
+                     </a>
                      </div>
                   </div>
                </div>
@@ -44,7 +40,7 @@
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
+                                 <th>Tên trang đơn</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>
@@ -56,7 +52,7 @@
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/post/<?= $item->image; ?>" alt="<?= $item->name; ?>">
+                                    <img class="img-fluid" src="../public/images/post/<?= $item->image; ?>" alt="<?= $item->name; ?>">
                                  </td>
                                  <td>
                                     <div class="title">

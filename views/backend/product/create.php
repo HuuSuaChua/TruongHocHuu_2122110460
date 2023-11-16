@@ -10,7 +10,7 @@
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-   <form action="index.php?option=product&cat=process" method="post" enctype="multipart/form-date">
+   <form action="index.php?option=product&cat=process" method="post" enctype="multipart/form-data">
          <div class="content-wrapper">
             <section class="content-header">
                <div class="container-fluid">
@@ -75,9 +75,13 @@
                            </div>
                         </div>
                         <div class="col-md-3">
+                        <div class="mb-3">
+                              <label>Giá gốc (*)</label>
+                              <input type="number" value="10000" min="10000" name="price" class="form-control">
+                           </div>
                            <div class="mb-3">
                               <label>Giá bán (*)</label>
-                              <input type="number" value="10000" min="10000" name="price" class="form-control">
+                              <input type="number" value="10000" min="10000" name="pricesale" class="form-control">
                            </div>
                            <div class="mb-3">
                               <label>Hình đại diện</label>

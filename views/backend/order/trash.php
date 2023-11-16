@@ -11,7 +11,7 @@
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Thùng rác thương hiệu</h1>
+                     <h1 class="d-inline">Thùng rác đơn hàng</h1>
                   </div>
                </div>
             </div>
@@ -44,8 +44,11 @@
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
-                                 <th>Tên slug</th>
+                                 <th>Tên đơn hàng</th>
+                                 <th>Tên người nhận</th>
+                                 <th>Địa chỉ người nhận</th>
+                                 <th>Email người nhận</th>
+                                 <th>Điện thoại người nhận</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -56,18 +59,20 @@
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/<?= $item->image; ?>" alt="<?= $item->name; ?>">
+                                    <img src="../public/images/user/<?= $item->image; ?>" alt="<?= $item->name; ?>">
                                  </td>
                                  <td>
                                     <div class="name">
-                                       <?= $item->name; ?>
+                                       <?= $item->deliveryname; ?>
                                     </div>
                                     <div class="function_style">
                                     <a class="text-danger" href="index.php?option=order&cat=restore&id=<?= $item->id;?>"><i class="fas fa-undo"></i> Khôi Phục</a>  
                                     <a class="text-danger" href="index.php?option=order&cat=destroy&id=<?= $item->id;?>"><i class="fas fa-trash"></i></i> Xoá</a>  
                                     </div>
                                  </td>
-                                 <td><?= $item->slug; ?></td>
+                                 <td><?= $item->deliveryaddress; ?></td>
+                                 <td><?= $item->deliveryphone; ?></td>
+                                 <td><?= $item->deliveryemail; ?></td>
                               </tr>
                               <?php endforeach; ?>
                               <?php endif; ?>

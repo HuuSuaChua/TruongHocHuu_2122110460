@@ -1,7 +1,10 @@
 <?php
    use App\Models\Product;
-   $list = Product::where('status','=',0)
-   ->orderBy('created_at','DESC')
+   $list = Product::where('product.status', '=', '0')
+   ->join('category', 'category.id', '=', 'product.category_id')
+   ->join('brand', 'brand.id', '=', 'product.brand_id')
+   ->orderBy('product.created_at', 'desc')
+   ->select('product.name as nameproduct', 'product.image as image', 'product.status', 'product.id', 'category.name as catename', 'brand.name as brandname')
    ->get();
 ?>
 <?php require_once "../views/backend/header.php"; ?>
@@ -45,7 +48,8 @@
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
                                  <th>Tên sản phẩm</th>
-                                 <th>Tên slug</th>
+                                 <th>Tên danh mục</th>
+                                 <th>Tên thương hiệu</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -56,18 +60,19 @@
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/product/<?= $item->image; ?>" alt="<?= $item->name; ?>">
+                                    <img class="img-fluid" src="../public/images/product/<?= $item->image; ?>" alt="<?= $item->name; ?>">
                                  </td>
                                  <td>
                                     <div class="name">
-                                       <?= $item->name; ?>
+                                       <?= $item->nameproduct; ?>
                                     </div>
                                     <div class="function_style">
                                     <a class="text-danger" href="index.php?option=product&cat=restore&id=<?= $item->id;?>"><i class="fas fa-undo"></i> Khôi Phục</a>  
                                     <a class="text-danger" href="index.php?option=product&cat=destroy&id=<?= $item->id;?>"><i class="fas fa-trash"></i></i> Xoá</a>  
                                     </div>
                                  </td>
-                                 <td><?= $item->slug; ?></td>
+                                 <td><?= $item->catename; ?></td>
+                                 <td><?= $item->brandname; ?></td>
                               </tr>
                               <?php endforeach; ?>
                               <?php endif; ?>

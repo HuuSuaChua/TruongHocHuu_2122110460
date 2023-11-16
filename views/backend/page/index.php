@@ -51,7 +51,7 @@ use App\Models\Post;
                               <input type="checkbox">
                            </td>
                            <td>
-                              <img src="../public/images/post/<?= $item->image;?>" alt="<?= $item->image;?>">
+                              <img class="img-fluid" src="../public/images/post/<?= $item->image;?>" alt="<?= $item->image;?>">
                            </td>
                            <td>
                               <div class="title">

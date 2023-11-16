@@ -11,13 +11,13 @@ if($category==null){
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=category&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=category&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Cập nhật thương hiệu</h1>
+                     <h1 class="d-inline">Cập nhật Category</h1>
                   </div>
                </div>
             </div>
@@ -49,7 +49,7 @@ if($category==null){
                      <div class="col-md-12">
                         <div class="mb-3">
                            <input type="hidden" name="id" value="<?= $category->id;?>"/>
-                           <label>Tên thương hiệu (*)</label>
+                           <label>Tên Category (*)</label>
                            <input type="text" value="<?=$category->name; ?> " name="name" class="form-control">
                         </div>
                         <div class="mb-3">

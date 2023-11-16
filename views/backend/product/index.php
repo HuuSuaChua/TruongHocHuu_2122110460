@@ -11,7 +11,6 @@
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="" method="post">
          <div class="content-wrapper">
             <section class="content-header">
                <div class="container-fluid">
@@ -39,6 +38,7 @@
                      <button class="btn btn-sm btn-success">Áp dụng</button>
                   </div>
                   <div class="card-body">
+                  <?php require_once "../views/backend/message.php"; ?>
                      <table class="table table-bordered" id="mytable">
                         <thead>
                            <tr>
@@ -97,6 +97,5 @@
                </div>
             </section>
          </div>
-      </form>
       <!-- END CONTENT-->
 <?php require_once "../views/backend/footer.php"; ?>

@@ -6,7 +6,6 @@ use App\Models\Product;
 $limit = 8;
 $current = Pagination::pageCurrent();
 $offset = Pagination::pageOffset($current, $limit);
-
    $slug = $_REQUEST['cat'];
    $brand = Brand::where([['status','=',1],['slug','=',$slug]])
    ->select('id','name')

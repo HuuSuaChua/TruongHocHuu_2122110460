@@ -7,13 +7,13 @@ use App\Models\Brand;
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=brand&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=brand&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Tất cả thương hiệu</h1>
+                     <h1 class="d-inline">Tất cả brand</h1>
                   </div>
                </div>
             </div>
@@ -40,7 +40,7 @@ use App\Models\Brand;
                   <div class="row">
                      <div class="col-md-4">
                         <div class="mb-3">
-                           <label>Tên thương hiệu (*)</label>
+                           <label>Tên brand (*)</label>
                            <input type="text" name="name" class="form-control">
                         </div>
                         <div class="mb-3">
@@ -83,7 +83,7 @@ use App\Models\Brand;
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/brand/<?= $item->image; ?>" alt="<?= $item->image; ?>">
+                                    <img class="img-fluid" src="../public/images/brand/<?= $item->image; ?>" alt="<?= $item->image; ?>">
                                  </td>
                                  <td>
                                     <div class="name">

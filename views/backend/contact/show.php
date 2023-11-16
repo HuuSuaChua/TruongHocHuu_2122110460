@@ -15,7 +15,7 @@ if($contact == null){
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Chi tiết thương hiệu</h1>
+                     <h1 class="d-inline">Chi tiết liên hệ</h1>
                   </div>
                </div>
             </div>
@@ -63,26 +63,32 @@ if($contact == null){
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Slug</td>
-                                 <td><?=$contact->slug; ?></td>
+                                 <td>Email</td>
+                                 <td><?=$contact->email; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Image</td>
-                                 <td><?=$contact->image; ?></td>
+                                 <td>Phone</td>
+                                 <td><?=$contact->phone; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Sort_order</td>
-                                 <td><?=$contact->sort_order; ?></td>
+                                 <td>Title</td>
+                                 <td><?=$contact->title; ?></td>
                               </tr>
                               <tr>
                                  <td></td>
                                  <td></td>
-                                 <td>Description</td>
-                                 <td><?=$contact->description; ?></td>
+                                 <td>Content</td>
+                                 <td><?=$contact->content; ?></td>
+                              </tr>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td>Replay_id</td>
+                                 <td><?=$contact->replay_id; ?></td>
                               </tr>
                               <tr>
                                  <td></td>

@@ -21,14 +21,16 @@ $list = Order::where('status', '!=', 0)
       <!-- Main content -->
       <section class="content">
          <div class="card">
-            <div class="card-header p-2">
-               <div class="col-md-6 text-left">
-                  <a href="order_create.html" class="btn btn-sm btn-primary">Thêm thương hiêu</a>
-                  <a class="btn btn-sm btn-info " href="index.php?option=order">Tất cả</a>
-                  <a class="btn btn-sm btn-warning " href="index.php?option=order&cat=trash">
-                     Thùng rác</a>
+         <section class="content-header">
+               <div class="container-fluid">
+                  <div class="row mb-2">
+                     <div class="col-md-6 text-left">
+                        <a class="text-success" href="index.php?option=order">Tất cả</a>
+                        <a class="text-danger" href="index.php?option=order&cat=trash">Thùng rác</a>
+                     </div>
+                  </div>
                </div>
-            </div>
+            </section>
             <div class="card-body p-2">
             <?php require_once "../views/backend/message.php"; ?>
                <table class="table table-bordered">
@@ -37,10 +39,10 @@ $list = Order::where('status', '!=', 0)
                         <th class="text-center" style="width:30px;">
                            <input type="checkbox">
                         </th>
-
                         <th>Mã khách hàng</th>
                         <th>Tên người nhận</th>
                         <th>Địa chỉ người nhận</th>
+                        <th>Email người nhận </th>
                         <th>Điện thoại người nhận </th>
                      </tr>
                   </thead>
@@ -81,6 +83,9 @@ $list = Order::where('status', '!=', 0)
                               </td>
                               <td>
                                  <?= $item->deliveryaddress; ?>
+                              </td>
+                              <td>
+                                 <?= $item->deliveryemail; ?>
                               </td>
                               <td>
                                  <?= $item->deliveryphone; ?>

@@ -11,7 +11,7 @@
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Thùng rác thương hiệu</h1>
+                     <h1 class="d-inline">Thùng rác Banner</h1>
                   </div>
                </div>
             </div>
@@ -44,7 +44,7 @@
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
+                                 <th>Tên banner</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>
@@ -56,7 +56,7 @@
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/<?= $item->image; ?>" alt="<?= $item->name; ?>">
+                                    <img class="img-fluid" src="../public/images/banner/<?= $item->image; ?>" alt="<?= $item->name; ?>">
                                  </td>
                                  <td>
                                     <div class="name">

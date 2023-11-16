@@ -9,13 +9,13 @@
       <!-- CONTENT -->
       <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=category&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=category&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Tất cả danh mục</h1>
+                     <h1 class="d-inline">Tất cả Category</h1>
                   </div>
                </div>
             </div>
@@ -42,7 +42,7 @@
                   <div class="row">
                      <div class="col-md-4">
                         <div class="mb-3">
-                           <label>Tên Danh mục (*)</label>
+                           <label>Tên Category (*)</label>
                            <input type="text" name="name" class="form-control">
                         </div>
                         <div class="mb-3">
@@ -73,7 +73,7 @@
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên Danh mục</th>
+                                 <th>Tên Category</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>

@@ -1,6 +1,6 @@
 <?php require_once '../views/backend/header.php'; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=page&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=page&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
@@ -20,15 +20,15 @@
                   </a>
                   <button class="btn btn-sm btn-success" name="THEM">
                      <i class="fa fa-save" aria-hidden="true"></i>
-                     Thêm bài viết
+                     Thêm trang đơn
                   </button>
                </div>
                <div class="card-body">
                   <div class="row">
                      <div class="col-md-9">
                         <div class="mb-3">
-                           <label>Tiêu đề bài viết (*)</label>
-                           <input type="text" name="title" class="form-control">
+                           <label>Tiêu đề trang đơn (*)</label>
+                           <input type="text" name="name" class="form-control">
                         </div>
                         <div class="mb-3">
                            <label>Slug</label>

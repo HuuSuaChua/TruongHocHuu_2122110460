@@ -34,23 +34,31 @@
                <div class="call-login--register border-bottom ">
                   <ul class="nav nav-fills py-0 my-0">
                      <li class="nav-item text-warning">
-                        <a class="nav-link" href="login.php">
+                        <a class="nav-link text-warning" href="index.php?option=profile">
                            <i class="fa fa-phone-square" aria-hidden="true"></i>
                            0559320257
                         </a>
                      </li>
-                     <li class="nav-item text-warning">
-                        <a class="nav-link" href="login.php">Đăng nhập</a>
-                     </li>
-                     <li class="nav-item text-warning">
-                        <a class="nav-link" href="register.php">Đăng ký</a>
-                     </li>
-                     <li class="nav-item text-warning">  
-                        <a class="nav-link" href="profile.php">Trương Học Hữu</a>
-                     </li>
+                     <?php if(isset( $_SESSION['name'])):?>
+                        <li class="nav-item text-warning">  
+                           <a class="nav-link text-warning" href="index.php?option=profile">
+                            Tên khách hàng : <?php echo $_SESSION['name']; ?>
+                           </a>
+                        </li>
+                        <li class="nav-item text-warning">
+                              <a class="nav-link text-warning" href="index.php?option=customer&logout=true">Đăng xuất</a>
+                           </li>
+                        <?php else :?>
+                           <li class="nav-item text-warning">
+                              <a class="nav-link text-warning " href="index.php?option=customer&login=true">Đăng nhập</a>
+                           </li>
+                           <li class="nav-item text-warning">
+                              <a class="nav-link text-warning" href="index.php?option=customer&register=true">Đăng ký</a>
+                           </li>
+                     <?php endif;?>
                   </ul>
                </div>
-               <div class="fs-6 py-2">
+               <div class="fs-6 py-2 text-main">
                   ĐỔI TRẢ HÀNG HOẶC HOÀN TIỀN <span class="text-main">TRONG 3 NGÀY</span>
                </div>
             </div>

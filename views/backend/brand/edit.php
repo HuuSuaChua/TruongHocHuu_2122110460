@@ -11,13 +11,13 @@ if($brand==null){
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=brand&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=brand&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Cập nhật thương hiệu</h1>
+                     <h1 class="d-inline">Cập nhật brand</h1>
                   </div>
                </div>
             </div>
@@ -49,7 +49,7 @@ if($brand==null){
                      <div class="col-md-12">
                         <div class="mb-3">
                            <input type="hidden" name="id" value="<?= $brand->id;?>"/>
-                           <label>Tên thương hiệu (*)</label>
+                           <label>Tên brand (*)</label>
                            <input type="text" value="<?=$brand->name; ?> " name="name" class="form-control">
                         </div>
                         <div class="mb-3">

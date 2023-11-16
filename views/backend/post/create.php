@@ -1,12 +1,16 @@
 <?php 
-use App\Models\Category;
-$category = Category::select('id', 'name')
+use App\Models\Post;
+use App\Models\Topic;
+   $category = Post::where('status','!=',0)
+   ->orderBy('created_at','DESC')
+   ->get();
+   $topic = Topic::where('status','!=',0)
    ->orderBy('created_at','DESC')
    ->get();
    ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=post&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=post&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
@@ -50,7 +54,7 @@ $category = Category::select('id', 'name')
                            <label>Chủ đề (*)</label>
                            <select name="topic_id" class="form-control">
                               <option value="">None</option>
-                              <?php foreach ($category as $ct): ?>
+                              <?php foreach ($topic as $ct): ?>
                               <option value="<?=$ct->id?>"><?=$ct->name?></option>
                               <?php endforeach;?>
                            </select>

@@ -1,5 +1,9 @@
 <?php
 use App\Libraries\MyClass;
+use App\Models\Topic;
+$topic = Topic::where('status','!=',0)
+   ->orderBy('created_at','DESC')
+   ->get();
    use App\Models\post;
    $id=$_REQUEST['id'];
    $post= post::find($id);
@@ -10,13 +14,13 @@ if($post==null){
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=post&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=post&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Cập nhật thương hiệu</h1>
+                     <h1 class="d-inline">Cập nhật bài viết</h1>
                   </div>
                </div>
             </div>
@@ -48,8 +52,8 @@ if($post==null){
                      <div class="col-md-12">
                         <div class="mb-3">
                            <input type="hidden" name="id" value="<?= $post->id;?>"/>
-                           <label>Tên thương hiệu (*)</label>
-                           <input type="text" value="<?=$post->name; ?> " name="name" class="form-control">
+                           <label>Tiêu đề bài viết (*)</label>
+                           <input type="text" value="<?=$post->title; ?> " name="title" class="form-control">
                         </div>
                         <div class="mb-3">
                            <label>Slug</label>
@@ -59,6 +63,16 @@ if($post==null){
                            <label>Mô tả</label>
                            <textarea  name="description" class="form-control"><?=$post->description; ?></textarea>
                         </div>
+                        <div class="mb-3">
+                           <label>Chủ đề (*)</label>
+                           <select name="topic_id" class="form-control">
+                              <option value="">None</option>
+                              <?php foreach ($topic as $ct): ?>
+                              <option value="<?=$ct->id?>"><?=$ct->name?></option>
+                              <?php endforeach;?>
+                           </select>
+                        </div>
+                        
                         <div class="mb-3">
                            <label>Hình đại diện</label>
                            <input type="file" name="image" class="form-control">

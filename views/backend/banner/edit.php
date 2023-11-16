@@ -11,13 +11,13 @@ if($banner==null){
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=banner&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=banner&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Cập nhật thương hiệu</h1>
+                     <h1 class="d-inline">Cập nhật banner</h1>
                   </div>
                </div>
             </div>
@@ -27,11 +27,7 @@ if($banner==null){
             <div class="card">
                <div class="card-header text-right">
                   <div class="row">
-                     <div class="col-md-6 text-left">
-                        <a href="index.php?option=banner">Tất cả</a>
-                        <a href="index.php?option=banner&cat=trash">Thùng rác</a>
-                     </div>
-                     <div class="col-md-6 text-right">
+                     <div class="col-md-12 text-right">
                      <button class="btn btn-sm btn-success" type="submit" name="CAPNHAT">
                      <i class="fa fa-save" aria-hidden="true"></i>
                      Lưu
@@ -49,16 +45,12 @@ if($banner==null){
                      <div class="col-md-12">
                         <div class="mb-3">
                            <input type="hidden" name="id" value="<?= $banner->id;?>"/>
-                           <label>Tên thương hiệu (*)</label>
+                           <label>Tên banner (*)</label>
                            <input type="text" value="<?=$banner->name; ?> " name="name" class="form-control">
                         </div>
                         <div class="mb-3">
-                           <label>Slug</label>
-                           <input type="text" value="<?=$banner->slug; ?> " name="slug" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                           <label>Mô tả</label>
-                           <textarea  name="description" class="form-control"><?=$banner->description; ?></textarea>
+                           <label>Liên kết</label>
+                           <input type="text" name="link" class="form-control">
                         </div>
                         <div class="mb-3">
                            <label>Hình đại diện</label>

@@ -1,8 +1,9 @@
 <?php
    use App\Models\post;
-   $list = post::where('status','=',0)
-   ->orderBy('created_at','DESC')
-   ->get();
+   $list = Post::where('post.status', '=', '0')
+   ->join('topic','topic.id','=','post.topic_id')
+   ->select('post.id','post.status','post.title as postname','post.image','topic.name as topicname')
+   ->orderBy('post.created_at', 'desc')->get();
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
@@ -45,7 +46,7 @@
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
                                  <th>Tên bài viết</th>
-                                 <th>Tên slug</th>
+                                 <th>Tên danh mục</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -56,18 +57,18 @@
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/post/<?= $item->image; ?>" alt="<?= $item->name; ?>">
+                                    <img class="img-fluid" src="../public/images/post/<?= $item->image; ?>" alt="<?= $item->name; ?>">
                                  </td>
                                  <td>
                                     <div class="name">
-                                       <?= $item->title; ?>
+                                       <?= $item->postname; ?>
                                     </div>
                                     <div class="function_style">
                                     <a class="text-danger" href="index.php?option=post&cat=restore&id=<?= $item->id;?>"><i class="fas fa-undo"></i> Khôi Phục</a>  
                                     <a class="text-danger" href="index.php?option=post&cat=destroy&id=<?= $item->id;?>"><i class="fas fa-trash"></i></i> Xoá</a>  
                                     </div>
                                  </td>
-                                 <td><?= $item->slug; ?></td>
+                                 <td><?= $item->topicname; ?></td>
                               </tr>
                               <?php endforeach; ?>
                               <?php endif; ?>

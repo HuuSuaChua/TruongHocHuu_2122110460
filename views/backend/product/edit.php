@@ -8,16 +8,24 @@ if($product==null){
     header("Location:index.php?option=product");
 
 }
+   use App\Models\Brand;
+   use App\Models\Category;
+   $brand = Brand::select('id', 'name')
+   ->orderBy('created_at','DESC')
+   ->get();
+   $category = Category::select('id', 'name')
+   ->orderBy('created_at','DESC')
+   ->get();
 ?>
 <?php require_once "../views/backend/header.php"; ?>
       <!-- CONTENT -->
-      <form action="index.php?option=product&cat=process" method="post" enctype="multipart/form-date">
+      <form action="index.php?option=product&cat=process" method="post" enctype="multipart/form-data">
       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Cập nhật thương hiệu</h1>
+                     <h1 class="d-inline">Cập nhật sản phẩm</h1>
                   </div>
                </div>
             </div>
@@ -48,7 +56,7 @@ if($product==null){
                      <div class="col-md-12">
                         <div class="mb-3">
                            <input type="hidden" name="id" value="<?= $product->id;?>"/>
-                           <label>Tên thương hiệu (*)</label>
+                           <label>Tên sản phẩm (*)</label>
                            <input type="text" value="<?=$product->name; ?> " name="name" class="form-control">
                         </div>
                         <div class="mb-3">
@@ -56,9 +64,35 @@ if($product==null){
                            <input type="text" value="<?=$product->slug; ?> " name="slug" class="form-control">
                         </div>
                         <div class="mb-3">
+                                    <label>Danh mục (*)</label>
+                                    <select name="category_id" class="form-control">
+                                       <option value="">Chọn danh mục</option>
+                                       <?php foreach ($category as $ct): ?>
+                                       <option value="<?=$ct->id?>"><?=$ct->name?></option>
+                                       <?php endforeach;?>
+                                    </select>
+                        </div>
+                           <div class="mb-3">
+                                    <label>Thương hiệu (*)</label>
+                                    <select name="brand_id" class="form-control">
+                                       <option value="">Chọn thương hiệu</option>
+                                          <?php foreach ($brand as $br): ?>
+                                          <option value="<?=$br->id?>"><?=$br->name?></option>
+                                          <?php endforeach;?>
+                                    </select>
+                                          </div>
+                        <div class="mb-3">
                            <label>Mô tả</label>
                            <textarea  name="description" class="form-control"><?=$product->description; ?></textarea>
                         </div>
+                        <div class="mb-3">
+                              <label>Giá gốc (*)</label>
+                              <input type="number" value="10000" min="10000" name="price" class="form-control">
+                           </div>
+                           <div class="mb-3">
+                              <label>Giá bán (*)</label>
+                              <input type="number" value="10000" min="10000" name="pricesale" class="form-control">
+                           </div>
                         <div class="mb-3">
                            <label>Hình đại diện</label>
                            <input type="file" name="image" class="form-control">
